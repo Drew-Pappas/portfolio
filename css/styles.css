@@ -1,0 +1,358 @@
+* {
+    box-sizing: border-box;
+    /* font-family: 'Source Code Pro', monospace; */
+    font-family: 'Courier Prime', monospace;
+    text-align: center;
+}
+
+a, a:visited{
+    text-decoration: none;
+    color: black;
+    line-height: 1.25rem;
+}
+
+/* is this correct? */
+.header { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: orange;
+    height: 10vh;
+}
+
+.header_main_text_small {
+    display: inline-block;
+    font-size: 3rem;
+}
+.header_main_text_large {
+    display: none;
+    font-size: 3rem;
+}
+
+#hamburger {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+}
+
+#hamburger:hover {
+    cursor: pointer;
+}
+
+.header_main_icon, #hamburger {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+
+.hidden {
+    visibility: hidden;
+    height: 0;
+    opacity: 0;
+    transition: all 0.33s ease-out;
+}
+nav {
+    visibility: visible;
+    opacity: 100;
+    width: 100%;
+    transition: opacity 0.33s ease-in;
+}
+
+.nav_links {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color:yellow;
+    text-align: center;
+    /* position: absolute; */
+    width: 100%;
+}
+
+.nav_links li{
+    padding: 5px;
+    border: 2px solid transparent;
+
+}
+
+.nav_links li:hover{
+    /* transform: scale(1.5); */
+    transform: translateY(10px) scale(1.25);
+    transition: 0.25s;
+    
+
+    /* CHANGE THIS */
+}
+
+.nav_icon {
+    margin: 0 auto;
+    display: block;
+    max-width: 4vw;
+    max-height: 4vh;
+    min-width: 24px;
+    min-height: 24px;
+}
+
+.nav_icon:hover, .nav_links a:hover {
+    fill: blue;
+    color: blue;
+}
+
+body {
+    display: block;
+}
+
+main {
+    background-color: aqua;
+    padding-top: 3vh;
+    min-height: 100vh;
+}
+
+/* #landing_page_main {
+    height: 85vh;
+} */
+
+.landing_page_text {
+    font-size: 4rem;
+    color: blue;
+    display: block;
+    /* margin: 10vh 0; */
+    
+}
+
+.about_paragraph {
+    background-color: rgba(255,255,255,1);
+    margin: 10px;
+    padding: 2vh 2vw;
+    min-height: 30vh;
+    border: 2px solid black;
+}
+
+.parallax{
+    padding: 10px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.plant_img {
+    margin: 2vh auto;
+}
+
+.parallax_img_one {
+    background-image: url("../imgs/code_img.PNG");
+    background-size: cover;
+    background-position: 0;
+}
+
+.parallax_img_two {
+    background-image: url("../imgs/android_studio_code_img.PNG");
+    background-size: cover;
+    background-position: 0;
+}
+
+#drew_chicago_bean {
+    width: 50%;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+
+.project_container {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    gap: 2.5vw;
+    padding: 2.5vh;
+}
+
+.project_header {
+    grid-column: span 1;
+    background-color: green;
+    padding: 20px;
+}
+
+.project_flip_card {
+    border: 2px solid black;
+    background-color: transparent;
+    margin: 5vh auto;
+    width: 90%;
+    height: 300px;;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+.project_flip_card_inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+.project_flip_card:hover .project_flip_card_inner, .project_flip_card:focus .project_flip_card_inner {
+    transform: rotateY(180deg);
+}
+
+.project_flip_card_front, .project_flip_card_back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.project_flip_card_front {
+    background-color: #bbb;
+    color: black;
+}
+
+.project_flip_card_front img {
+    width: 15%;
+    
+}
+
+.project_flip_card_back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.project_flip_card_back p {
+    margin: 15px;
+} 
+
+.flip_card_code_link {
+    background-color: orange;
+    padding: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 10%;
+    
+}
+
+.flip_card_code_link:hover {
+    background-color: white;
+    cursor: pointer;
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 5vw;
+    gap: 3.5vh;
+    
+}
+
+textarea {
+    resize: none;
+    height: 40vh;
+    text-align: left;
+}
+
+input {
+    text-align: left;
+}
+
+.footer {
+    position: relative;
+    display: flex;
+    bottom: 0;
+    background-color: purple;
+    width: 100%;
+    justify-content: center;
+}
+
+.footer a {
+    padding: 15px 0;
+    margin: 0 60px;
+}
+
+.social_link {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0%);
+    transition: 0.25s;
+}
+
+.social_link:hover {
+    transform: scale(1.25);
+    transition: 0.25s;
+    filter: brightness(100%);
+}
+
+@media all and (min-width: 800px){
+
+    .header {
+        justify-content: center;
+    }
+    
+    .header_main_text_small {
+        display: none;
+    }
+    .header_main_text_large {
+        display: inline-block;
+        
+    }
+
+    #hamburger {
+        display: none;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        padding-top: 0;
+        grid-auto-flow: column;
+    }
+
+    #drew_chicago_bean, .plant_img {
+        justify-self: center;
+        align-self: center;
+        grid-column: 2;
+    }
+
+    .parallax {
+        grid-column: 1;
+        margin-left: 10vw;
+    }
+
+    .nav_links {
+        position: fixed;
+        width: 10vw;
+        grid-template-columns: 1fr;
+        z-index: 2;
+        height: 80vh;
+    }
+
+    .nav_links li{
+        align-self: center;
+    }
+    
+    .project_container{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .project_header {
+        grid-column: span 2;
+    }
+
+    .project_flip_card {
+        width: 100%;
+    }
+}
+
+@media all and (min-width: 1000px) {
+
+    .project_container{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .project_header {
+        grid-column: span 4;
+    }
+}

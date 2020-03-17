@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Courier+Prime&display=swap" rel="stylesheet">
-    <title>Drew Pappas</title>
+    <title>Drew | Contact</title>
 </head>
 <body onresize= unhideMenu()>
     <header class = "header">
@@ -16,7 +16,7 @@
             {DP};
         </span>
         <span class = "header_main_text_large">
-            { Drew Pappas };
+            {Drew Pappas};
         </span>
         
         <!-- hamburger -->
@@ -83,16 +83,32 @@
 
     </nav>
 
-    <main id = "landing_page_main">
-        <div>
-                <span class = "landing_page_text">Hi</span> 
-            <br><span class = "landing_page_text">I'm Drew,</span> 
-            <br><span class = "landing_page_text">A UMSI Student</span>
-        </div>
+    <main>
+        <form action="" method="POST">
+            <fieldset>
+                <legend>User Data</legend>
+                <div class = "contact">
+                    <label for ="first">First Name</label>
+                    <input type="text" id ="first" name="fname" placeholder ="First Name"/> 
+            
+                    <label for ="last">Last Name</label>
+                    <input type="text" id ="last" name="lname" placeholder ="Last Name"/> 
+            
+                    <label for ="email">Email</label>
+                    <input type="email" id="email" name ="pw" placeholder="Email"/> 
 
+                    <label for ="message">Message</label>
+                    <textarea name = "message" id = "message" placeholder= "Enter your message" require></textarea>
+                </div>
+            
+                <div>
+                    <input type="submit"/>
+                </div>
+                </fieldset>
+                </form>
 
     </main>
-
+    
     <footer class = "footer">
         <a href = "https://www.linkedin.com/in/drew-pappas/" >
             <img src = "imgs/linkedin_symbol.png" alt = "linkedin symbol" class = "social_link"></a>
