@@ -96,6 +96,12 @@ nav {
     color: blue;
 }
 
+#current_page {
+    text-decoration: underline;
+    fill: purple;
+    color: purple;
+}
+
 body {
     display: block;
 }
@@ -285,7 +291,7 @@ input {
     filter: brightness(100%);
 }
 
-@media all and (min-width: 800px){
+@media all and (min-width: 750px){
 
     .header {
         justify-content: center;
@@ -305,7 +311,7 @@ input {
 
     main {
         display: grid;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         padding-top: 0;
         grid-auto-flow: column;
     }
@@ -313,11 +319,11 @@ input {
     #drew_chicago_bean, .plant_img {
         justify-self: center;
         align-self: center;
-        grid-column: 2;
+        grid-column: 3;
     }
 
     .parallax {
-        grid-column: 1;
+        grid-column: 1 / span 2;
         margin-left: 10vw;
     }
 
@@ -334,15 +340,25 @@ input {
     }
     
     .project_container{
+        grid-column: span 3;
         grid-template-columns: 1fr 1fr;
+        margin-left: 10vw;
     }
 
     .project_header {
         grid-column: span 2;
     }
-
     .project_flip_card {
         width: 100%;
+    }
+
+    form {
+        grid-column: 1 / span 3;
+    }
+
+    .contact {
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
     }
 }
 
