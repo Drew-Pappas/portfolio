@@ -29,6 +29,7 @@ a, a:visited {
     align-items: center;
     background-color: #495867;
     height: 10vh;
+    color: #F7F7FF;
 }
 
 .header_main_text_small {
