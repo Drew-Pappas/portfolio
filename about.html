@@ -12,26 +12,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/html5reset.css">
+    <link rel="icon" href="imgs/brackets.png" sizes="16x16" type="image/png">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Courier+Prime&display=swap" rel="stylesheet">
     <title>Drew | About</title>
 </head>
 <body onresize= unhideMenu()>
+    <div class="skip"><a href="#main">Jump to content</a></div>
     <header class = "header">
-        <!-- This should be more semantic -->
         <span class = "header_main_text_small">
             {DP};
         </span>
         <span class = "header_main_text_large">
-            {Drew Pappas};
+            { Drew Pappas };
         </span>
         
-        <!-- hamburger -->
         <svg id = "hamburger" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
              viewBox="0 0 24.75 24.75" style="enable-background:new 0 0 24.75 24.75;" xml:space="preserve"
             onclick = changeMenu() tabindex="0"> 
-            <!-- width="32" height="32" -->
 
             <path d="M0,3.875c0-1.104,0.896-2,2-2h20.75c1.104,0,2,0.896,2,2s-0.896,2-2,2H2C0.896,5.875,0,4.979,0,3.875z M22.75,10.375H2
                 c-1.104,0-2,0.896-2,2c0,1.104,0.896,2,2,2h20.75c1.104,0,2-0.896,2-2C24.75,11.271,23.855,10.375,22.75,10.375z M22.75,18.875H2
@@ -43,14 +42,13 @@
     <nav>
         <ul class = "nav_links">
             <li><a href = "index.html">
-                <svg class = "nav_icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                <svg class = "nav_icon" version="1.1" id="home" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                     viewBox="0 0 247.789 247.789" style="enable-background:new 0 0 247.789 247.789;" xml:space="preserve">
                     <path d="M223.779,122.895c-3.313,0-6,2.687-6,6v106.895h-64.384v-67.102c0-3.313-2.687-6-6-6h-47c-3.313,0-6,2.687-6,6v53.207
                         c0,3.313,2.687,6,6,6s6-2.687,6-6v-47.207h35v61.102H30.01V88.929l93.884-75.239l96.132,77.04c2.586,2.073,6.362,1.655,8.434-0.93
                         c2.072-2.586,1.656-6.361-0.93-8.434L127.646,1.318c-2.192-1.758-5.312-1.758-7.504,0L20.258,81.366
                         c-1.421,1.139-2.248,2.86-2.248,4.682v155.741c0,3.313,2.686,6,6,6h199.769c3.314,0,6-2.687,6-6V128.895
                         C229.779,125.581,227.093,122.895,223.779,122.895z" />
-                        <!-- height = "36" width = "36" -->
                 </svg>Home</a>
             </li>
             
@@ -63,7 +61,6 @@
                         18.398437 27.339844 39.980468 27.339844 65.972656 0 26-8.945313 47.578125-27.339844 65.976562-18.398437 18.398438-39.980469 27.339844-65.976563 
                         27.339844-25.992187 0-47.570312-8.945312-65.972656-27.339844-18.398437-18.394531-27.34375-39.976562-27.34375-65.976562 0-25.992188 8.945313-47.574219 
                         27.34375-65.972656zm0 0"/>
-                        <!-- height = "36" width = "36" -->
                     <path d="m426.128906 393.703125c-.691406-9.976563-2.089844-20.859375-4.148437-32.351563-2.078125-11.578124-4.753907-22.523437-7.957031-32.527343-3.3125-10.339844-7.808594-20.550781-13.375-30.335938-5.769532-10.15625-12.550782-19-20.160157-26.277343-7.957031-7.613282-17.699219-13.734376-28.964843-18.199219-11.226563-4.441407-23.667969-6.691407-36.976563-6.691407-5.226563 0-10.28125 2.144532-20.042969 8.5-6.007812 3.917969-13.035156 8.449219-20.878906 13.460938-6.707031 4.273438-15.792969 8.277344-27.015625 11.902344-10.949219 3.542968-22.066406 5.339844-33.042969 5.339844-10.96875 0-22.085937-1.796876-33.042968-5.339844-11.210938-3.621094-20.300782-7.625-26.996094-11.898438-7.769532-4.964844-14.800782-9.496094-20.898438-13.46875-9.753906-6.355468-14.808594-8.5-20.035156-8.5-13.3125 0-25.75 2.253906-36.972656 6.699219-11.257813 4.457031-21.003906 10.578125-28.96875 18.199219-7.609375 7.28125-14.390625 16.121094-20.15625 26.273437-5.558594 9.785157-10.058594 19.992188-13.371094 30.339844-3.199219 10.003906-5.875 20.945313-7.953125 32.523437-2.0625 11.476563-3.457031 22.363282-4.148437 32.363282-.679688 9.777344-1.023438 19.953125-1.023438 30.234375 0 26.726562 8.496094 48.363281 25.25 64.320312 16.546875 15.746094 38.4375 23.730469 65.066406 23.730469h246.53125c26.621094 0 48.511719-7.984375 65.0625-23.730469 16.757813-15.945312 25.253906-37.589843 25.253906-64.324219-.003906-10.316406-.351562-20.492187-1.035156-30.242187zm-44.90625 72.828125c-10.933594 10.40625-25.449218 15.464844-44.378906 15.464844h-246.527344c-18.933594 0-33.449218-5.058594-44.378906-15.460938-10.722656-10.207031-15.933594-24.140625-15.933594-42.585937 0-9.59375.316406-19.066407.949219-28.160157.617187-8.921874 1.878906-18.722656 3.75-29.136718 1.847656-10.285156 4.199219-19.9375 6.996094-28.675782 2.683593-8.378906 6.34375-16.675781 10.882812-24.667968 4.332031-7.617188 9.316407-14.152344 14.816407-19.417969 5.144531-4.925781 11.628906-8.957031 19.269531-11.980469 7.066406-2.796875 15.007812-4.328125 23.628906-4.558594 1.050781.558594 2.921875 1.625 5.953125 3.601563 6.167969 4.019531 13.277344 8.605469 21.136719 13.625 8.859375 5.648437 20.273437 10.75 33.910156 15.152344 13.941406 4.507812 28.160156 6.796875 42.273437 6.796875 14.113282 0 28.335938-2.289063 42.269532-6.792969 13.648437-4.410156 25.058594-9.507813 33.929687-15.164063 8.042969-5.140624 14.953125-9.59375 21.121094-13.617187 3.03125-1.972656 4.902344-3.042969 5.953125-3.601563 8.625.230469 16.566406 1.761719 23.636719 4.558594 7.636719 3.023438 14.121093 7.058594 19.265625 11.980469 5.5 5.261719 10.484375 11.796875 14.816406 19.421875 4.542969 7.988281 8.207031 16.289062 10.886719 24.660156 2.800781 8.75 5.15625 18.398438 7 28.675782 1.867187 10.433593 3.132812 20.238281 3.75 29.144531v.007812c.636719 9.058594.957031 18.527344.960937 28.148438-.003906 18.449219-5.214844 32.378906-15.9375 42.582031zm0 0"/>
                 </svg>About</a>
             </li>
@@ -76,22 +73,19 @@
                     <path d="m64 428c0 46.317 37.682 84 84 84h44c13.255 0 24-10.745 24-24s-10.745-24-24-24h-44c-19.851 0-36-16.149-36-36v-108c0-6.365-2.529-12.47-7.029-16.971l-47.03-47.029 
                         47.029-47.029c4.501-4.501 7.03-10.606 7.03-16.971v-108c0-19.851 16.149-36 36-36h44c13.255 0 24-10.745 24-24s-10.745-24-24-24h-44c-46.318 0-84 37.683-84 84v98.059l-56.971 
                         56.97c-9.373 9.373-9.373 24.568 0 33.941l56.971 56.971z"/>
-                        <!-- height="36"  width="36" -->
                 </svg>Code</a>
             </li>
 
             <li><a href = "contact.html">
-                <!-- This might be wrong tbh -->
-                <svg class = "nav_icon" id="Capa_1" enable-background="new 0 0 479.058 479.058" viewBox="0 0 479.058 479.058" xmlns="http://www.w3.org/2000/svg">
+                <svg class = "nav_icon" id="mail" enable-background="new 0 0 479.058 479.058" viewBox="0 0 479.058 479.058" xmlns="http://www.w3.org/2000/svg">
                     <path d="m434.146 59.882h-389.234c-24.766 0-44.912 20.146-44.912 44.912v269.47c0 24.766 20.146 44.912 44.912 44.912h389.234c24.766 0 44.912-20.146 44.912-44.912v-269.47c0-24.766-20.146-44.912-44.912-44.912zm0 29.941c2.034 0 3.969.422 5.738 1.159l-200.355 173.649-200.356-173.649c1.769-.736 3.704-1.159 5.738-1.159zm0 299.411h-389.234c-8.26 0-14.971-6.71-14.971-14.971v-251.648l199.778 173.141c2.822 2.441 6.316 3.655 9.81 3.655s6.988-1.213 9.81-3.655l199.778-173.141v251.649c-.001 8.26-6.711 14.97-14.971 14.97z"/>
-                    <!-- height="36" width="36" -->
                 </svg>Contact</a>
             </li>
         </ul>
 
     </nav>
 
-    <main>
+    <main id = "main">
 
         <img src = "imgs/drew_chicago_bean.jpg" id = "drew_chicago_bean" alt = "Man standing in front of reflective sculpture">
         <div class = "parallax parallax_img_one">
@@ -103,7 +97,7 @@
         <img src = "imgs/baby_plant.png" class="plant_img" alt = "plant icon with 1 leaf and roots">
         <div class = "parallax parallax_img_two">
             <p class = "about_paragraph">
-                In the interim period before being admitted to the University of Michigan, I worked as a Technical Support Representative for Thomson Reuters performing troubleshooting on tax and accounting software. Though it was tough to leave my fellow support reps, I knew that a career in software was my passion. I parted ways with Thomson Reuters in late August and prepared myself for graduate school
+                In the interim period before being admitted to the University of Michigan, I worked as a Technical Support Representative for Thomson Reuters performing troubleshooting on tax and accounting software. Though it was tough to leave my fellow support reps, I knew that a career in software was my passion. I parted ways with Thomson Reuters in late August and prepared myself for graduate school.
             </p>
         </div>
 
@@ -125,21 +119,12 @@
         <div class = "parallax parallax_img_one">
             <p class = "about_paragraph">
                 This site serves not only as a collection of much of my Software Engineering and Data Science work, but also to detail my progress and growth as a developer and data scientist. As such, assignments are shown as they were submitted despite possible errors and lapses in best practice. It is important to recognize not only one's accomplishments, but also one's failures, because inevitably those struggles sculpted the developer that I am today.
-            </p>    
-        </div>
-        
 
-        
-        <!-- TEST -->
-        <!-- <div class = "intro_text_container">
-            <p class = "intro_text">
-                I am a student, developer, and employee
+                <a href = "code.html" id = "go_to_projects">View projects</a>
             </p>
-        </div> -->
-        
-          <!-- TEST -->
+            
+        </div>
     
-
     </main>
     
     <footer class = "footer">

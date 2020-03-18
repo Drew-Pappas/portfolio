@@ -1,18 +1,28 @@
 * {
     box-sizing: border-box;
-    /* font-family: 'Source Code Pro', monospace; */
     font-family: 'Courier Prime', monospace;
     text-align: center;
 }
 
 
-a, a:visited{
+a, a:visited {
     text-decoration: none;
     color: black;
     line-height: 1.25rem;
 }
 
-/* is this correct? */
+.skip a{
+    position: absolute;
+    top:-1000px;
+    left: 0;
+    padding: 3.5vh;
+    background-color: #F7F7FF;
+}
+
+.skip a:focus {
+    top:0px;
+}
+
 .header { 
     display: flex;
     justify-content: space-between;
@@ -28,6 +38,11 @@ a, a:visited{
 .header_main_text_large {
     display: none;
     font-size: 3rem;
+}
+
+.header_main_text_small:hover, .header_main_text_large:hover {
+    color: #FE5F55;
+    cursor: default;
 }
 
 #hamburger {
@@ -65,23 +80,17 @@ nav {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     background-color:#577399;
     text-align: center;
-    /* position: absolute; */
     width: 100%;
 }
 
 .nav_links li{
     padding: 10px 5px;
     border: 2px solid transparent;
-
 }
 
 .nav_links li:hover{
-    /* transform: scale(1.5); */
     transform: translateY(10px) scale(1.25);
     transition: 0.25s;
-    
-
-    /* CHANGE THIS */
 }
 
 .nav_icon {
@@ -106,6 +115,7 @@ nav {
 
 body {
     display: block;
+    background-color: #577399;
 }
 
 main {
@@ -119,13 +129,7 @@ main {
 .landing_page_text {
     font-size: 4rem;
     display: block;
-    /* margin: 10vh 0; */
-    
 }
-
-/* #big_gear, #med_gear, #small_gear {
-    fill: gray;
-} */
 
 #qr_code {
     margin: 2vh 0;
@@ -140,7 +144,6 @@ main {
 
 .gear {
     margin: 0 2.5vw;
-
 }
 
 #big_gear {
@@ -149,10 +152,29 @@ main {
     height: 20vh;
 }
 
+#big_gear, #small_gear {
+    transition: all 15s linear;
+    transform: rotate(-360deg);
+}
+
+#big_gear:hover, #small_gear:hover {
+    transition: all 15s linear;
+    transform: rotate(360deg);
+    fill: #FE5F55;
+}
+
 #med_gear {
+    transition: all 15s linear;
+    transform: rotate(360deg);
     fill: #577399;
     width: 15vw;
     height: 15vh;
+}
+
+#med_gear:hover {
+    transition: all 15s linear;
+    transform: rotate(-360deg);
+    fill: #FE5F55;
 }
 
 #small_gear {
@@ -172,97 +194,95 @@ main {
 
 #magnifying_glass_icon {
     fill: #577399;
+    transition: transform 1s;
 }
 
 #database_icon {
     fill: #F7F7FF;
 }
 
-/* SLIDESHOW TEST */
-* {box-sizing:border-box}
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
+#desktop_icon:hover {
+    animation: wiggle 1.5s linear;
 }
 
-/* Hide the images by default */
-.mySlides {
-  display: none;
+@keyframes wiggle {
+    0% {transform: rotate(10deg);}
+    25% {transform: rotate(-10deg);}
+    50% {transform: rotate(20deg);}
+    75% {transform: rotate(-5deg);}
+    100% {transform: rotate(0deg);}
+    }
+
+#magnifying_glass_icon:hover {
+    transform: scale(1.25);
+    transition: transform 1s;
 }
 
-.mySlides img {
-    width: 50%;
+#database_icon:hover {
+    animation: flicker 15s linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+
+
+@keyframes flicker {
+    0% { fill: #F7F7FF}
+    2% { fill: #FE5F55}
+    4% { fill: #F7F7FF}
+    6% { fill: #FE5F55}
+    8% { fill: #F7F7FF}
+    10% { fill: #FE5F55}
+    12% { fill: #F7F7FF}
+    30% { fill: #F7F7FF}
+    32% { fill: #FE5F55}
+    34% { fill: #F7F7FF}
+    36% { fill: #FE5F55}
+    38% { fill: #F7F7FF}
+    63% {fill: #F7F7FF}
+    65% {fill: #FE5F55}
+    67% {fill: #F7F7FF}
+    80% {fill: #F7F7FF}
+    82% {fill: #FE5F55}
+    84% {fill: #F7F7FF}
+    86% {fill: #FE5F55}
+    88% {fill: #F7F7FF}
+    96% {fill: #F7F7FF}
+    98% {fill: #FE5F55}
+    100%  { fill: #F7F7FF}
+}
+
+.slideshow_container {
+    margin: 10vh auto;
+}
+
+.my_slides {
+    display: hidden;
+    width: 50vw;
+    border: 2px solid #FE5F55;
     border-radius: 50%;
-}
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
+    margin: 0 auto;
 }
 
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* Fading animation */
 .fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 2s;
-  animation-name: fade;
-  animation-duration: 2s;
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 8s;
+    animation-name: fade;
+    animation-duration: 8s;
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+    0% {opacity: 0}
+    25% {opacity:1}
+    75% { opacity: 1}
+    100% { opacity: 0}
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+    0% {opacity: 0}
+    25% {opacity:1}
+    75% { opacity: 1}
+    100% { opacity: 0}
 }
-/* SLIDESHOW TEST */
-
 
 .about_paragraph {
     background-color: #F7F7FF;
@@ -270,6 +290,18 @@ main {
     padding: 2vh 2vw;
     min-height: 30vh;
     border: 2px solid black;
+}
+
+#go_to_projects {
+    display: block;
+    width: 50%;
+    background-color: #FE5F55;
+    margin: 3vh auto;
+    padding: 3vh 3vw;
+    font-weight: 700;
+    font-size: 1.25rem;
+    border:2px solid black;
+    border-radius: 10px;
 }
 
 .parallax{
@@ -334,35 +366,23 @@ main {
 }
 
 @keyframes spin {
-    from {
-        transform:rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+    from {transform:rotate(0deg);}
+    to {transform: rotate(360deg);}
 }
 
 @keyframes counterspin {
-    from {
-        transform:rotate(0deg);
-    }
-    to {
-        transform: rotate(-360deg);
-    }
+    from {transform:rotate(0deg);}
+    to {transform: rotate(-360deg);}
 }
 
-@keyframes type{ 
-    from { 
-        width: 0;
-    }
-    
-  } 
+@keyframes type { 
+    from { width: 0;}
 
-  @keyframes blink{
-    to {
-        opacity: 0.1;
-    }
-  }
+} 
+
+@keyframes blink {
+    to {opacity: 0.1;}
+}
 
 #projects_header {
     width: 153px;
@@ -383,18 +403,15 @@ main {
     font-size: 3.25rem;
     grid-column: 1;
     grid-row: 1;
-    /* margin-left: 60px; */
     position: absolute;
     margin-top: 17px;
     margin-left: 8px;
-
 }
 
 #umsi {
     display: inline-block;
     grid-row: 2;
     grid-column: 1;
-    /* margin-left: 50px; */
     font-size: 1.5rem;
     position: absolute;
     margin-top: 70px;
@@ -408,7 +425,6 @@ main {
     grid-column: 2;
     grid-row: 1 / -1;
     position: absolute;
-    /* margin-right: 20px; */
     margin-top: 35px;
     margin-left: 45px;
 }
@@ -421,6 +437,11 @@ main {
     grid-template-columns: 1fr;
     gap: 2.5vw;
     padding: 0 2.5vh;
+}
+
+#pre_project_dialog p {
+    margin: 0 auto;
+    padding: 2.5vh 2.5vw;
 }
 
 .project_header {
@@ -437,7 +458,6 @@ main {
     border: 2px solid #577399;
     border-style: inset;
     perspective: 1000px;
-    
 }
 
 .project_flip_card_inner {
@@ -447,7 +467,7 @@ main {
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
-  }
+}
 
 .project_flip_card:hover .project_flip_card_inner, .project_flip_card:focus .project_flip_card_inner {
     transform: rotateY(180deg);
@@ -463,7 +483,6 @@ main {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-
 }
 
 .project_flip_card_front {
@@ -476,21 +495,17 @@ main {
 }
 
 .project_flip_card_front img {
-    width: 15%;
-    
+width: 25%;
 }
 
 .project_flip_card_back {
     background-color: #FE5F55;
-    /* color: white; */
     transform: rotateY(180deg);
 }
 
 .project_flip_card_back p {
     margin: 15px;
 } 
-
-
 
 .flip_card_code_link {
     background-color: #F7F7FF;
@@ -499,7 +514,6 @@ main {
     display: inline-block;
     margin-top: 5%;
     border: 1px solid #000000;
-    
 }
 
 .flip_card_code_link:hover, .flip_card_code_link:focus{
@@ -512,12 +526,26 @@ main {
     grid-template-columns: 1fr;
     padding: 5vw;
     gap: 3.5vh;
-    
+}
+
+legend {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+label {
+    font-size: 1.25rem;
 }
 
 input, textarea {
-    background-color: #F7F7FF;
-    border: 1.5px inset #FE5F55;
+    padding: 2vh 2.5vw;
+    font-size: 1rem;
+}
+
+input, textarea, #submit {
+background-color: #F7F7FF;
+border: 1.5px inset #FE5F55;
+border-radius: 10px;
 }
 
 textarea {
@@ -527,12 +555,20 @@ textarea {
 }
 
 input {
-    text-align: left;
+text-align: left;
 }
 
 #submit{
-    background-color: green;
-    border:2px solid black;
+    width: 50vw;
+    margin-top: 3vh;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+#submit:hover, #submit:focus {
+    cursor: pointer;
+    background-color: #577399;
 }
 
 .footer {
@@ -567,7 +603,7 @@ input {
     .header {
         justify-content: center;
     }
-    
+
     .header_main_text_small {
         display: none;
     }
@@ -621,6 +657,9 @@ input {
         justify-self: center;
         align-self: center;
         grid-column: 3;
+    }
+
+    #drew_chicago_bean {
         width: 60%;
     }
 
@@ -640,7 +679,7 @@ input {
     .nav_links li{
         align-self: center;
     }
-    
+
     .project_container{
         grid-column: span 3;
         grid-template-columns: 1fr 1fr;
@@ -655,22 +694,132 @@ input {
     }
 
     form {
-        grid-column: 1 / span 3;
+        grid-column: 1 / -1;
+    }
+
+    legend {
+        padding-right: 5vw;
+        padding-top: 3vh;
     }
 
     .contact {
         grid-template-columns: 1fr 2fr;
         align-items: center;
+        margin: 0 1.5vw;
+    }
+
+    .slideshow_container {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        margin: 8vh auto;
+    }
+
+    .my_slides {
+        width: 25vw;
     }
 }
 
-@media all and (min-width: 1000px) {
+    @media all and (min-width: 1100px) {
+    .header {
+        justify-content: start;
+        padding-left: 2.5vw;
+    }
+
+    .nav_links {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        background-color: transparent;
+        width: 50vw;
+        position: absolute;
+        height:auto;
+        top:0;
+        right:0;
+    }
+
+    #drew_chicago_bean, .plant_img {
+        grid-column: 1; 
+    }
+
+    #drew_chicago_bean {
+        width: 50%;
+    }
+
+    .parallax {
+        margin-left: 0;
+        grid-column: 2 / -1;
+        min-height: 20vh;
+    }
+
+    .about_paragraph {
+        min-height: 30vh;
+        padding:5vh 2.5vw
+    }
+
+    #dp_umsi_badge::before, #dp_umsi_badge::after {
+        height: 20vh;
+        width: 20vw;
+    }
 
     .project_container{
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-left: 0;
+        padding-top: 3.5vh;
+    }
+    #pre_project_dialog p {
+        width: 50%;
     }
 
-    #projects_header {
-        grid-column: span 4;
+    #pre_project_dialog {
+        grid-column: 1 / -1;
+    }
+
+    .contact {
+        grid-template-columns: 1fr 4fr;
+        margin: 0;
+        padding: 2.5vh 2.5vw;
+    }
+
+    .slideshow_container {
+        margin:0 5vw;
+        grid-column: auto;
+        grid-row: auto;
+        align-self: center;
+    }
+    
+    #submit {
+        width: 25vw;
     }
 }
+
+@media (prefers-reduced-motion: reduce) {
+        #desktop_icon:hover, 
+        #database_icon:hover,
+        #magnifying_glass_icon:hover,
+         #dp_umsi_badge::before, 
+         #dp_umsi_badge::after,
+         #projects_header,
+         .blink, 
+         .hidden,
+         nav,
+         .nav_links li:hover,
+         #big_gear,
+         #med_gear,
+        #small_gear,
+        #big_gear:hover,
+         #small_gear:hover,
+         #med_gear:hover,
+         #projects_header,
+         .project_flip_card_back,
+         .project_flip_card:hover .project_flip_card_inner, 
+         .project_flip_card:focus .project_flip_card_inner
+          {
+          animation: none;
+          transition: none;
+          transform: none;
+        }
+
+        .blink {
+            display: none;
+        }
+
+
+      }
