@@ -441,8 +441,6 @@ main {
     margin-left: 45px;
 }
 
-
-
 .project_container {
     display: grid;
     grid-template-rows: auto;
@@ -780,7 +778,6 @@ text-align: left;
     }
 
     .about_paragraph {
-        min-height: 30vh;
         padding:5vh 2.5vw
     }
 
