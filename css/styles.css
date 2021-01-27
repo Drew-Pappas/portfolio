@@ -4,7 +4,6 @@
     text-align: center;
 }
 
-
 a, a:visited {
     text-decoration: none;
     color: black;
@@ -821,32 +820,29 @@ text-align: left;
         #desktop_icon:hover, 
         #database_icon:hover,
         #magnifying_glass_icon:hover,
-         #dp_umsi_badge::before, 
-         #dp_umsi_badge::after,
-         #projects_header,
-         .blink, 
-         .hidden,
-         nav,
-         .nav_links li:hover,
-         #big_gear,
-         #med_gear,
+        #dp_umsi_badge::before, 
+        #dp_umsi_badge::after,
+        #projects_header,
+        .blink, 
+        .hidden,
+        nav,
+        .nav_links li:hover,
+        #big_gear,
+        #med_gear,
         #small_gear,
         #big_gear:hover,
-         #small_gear:hover,
-         #med_gear:hover,
-         #projects_header,
-         .project_flip_card_back,
-         .project_flip_card:hover .project_flip_card_inner, 
-         .project_flip_card:focus .project_flip_card_inner
-          {
-          animation: none;
-          transition: none;
-          transform: none;
-        }
+        #small_gear:hover,
+        #med_gear:hover,
+        #projects_header,
+        .project_flip_card_back,
+        .project_flip_card:hover .project_flip_card_inner, 
+        .project_flip_card:focus .project_flip_card_inner {
+        animation: none;
+        transition: none;
+        transform: none;
+    }
 
         .blink {
             display: none;
-        }
-
-
-      }
+    }
+}
